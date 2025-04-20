@@ -1,0 +1,15 @@
+[build]
+  command = "npm run generate"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[dev]
+  framework = "#custom"
+  targetPort = 8888
+  command = "npm run dev"
+
+[[headers]]
+  for = "/.netlify/functions/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "no-cache"
